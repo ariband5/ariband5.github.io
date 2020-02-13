@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.card {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+p {
+    padding: 5px;
+}
