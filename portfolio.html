@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A Developing Developer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        
+        <ul class="nav">
+            <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+        </ul>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">A Developing Developer</h1>
+              <p class="lead">There is beauty in simplicity </p>
+            </div>
+          </div>
+          
+          <div class="container">
+            <div class="jumbotron"> 
+               <h1 class="display-4">OpenWeather API</h1>
+               <p class="lead">This is a simple weather application.</p>
+               <form>
+                   <input type="text" class="city" placeholder="City">
+   
+                   <input type="text" class="state" placeholder="State">
+   
+                   <input type="text" class="country" placeholder="Country">  
+   
+                   <input type="submit" value="submit" button type="button" class="btn btn-success">
+   
+               </form>
+               <br>
+               <div class="location"></div>
+               <div class="temperature"></div>
+               <hr class="my-4">
+               <p>It uses the OpenWeather API to get the temperature of any city.</p>
+               <p class="lead">
+                 
+               </p>
+           </div> 
+
+            <div class="container">
+                <h6>Who is hiding behind this ninja?</h6>
+                <div class="cat">
+                    <img style="margin: .5px;"src="img/ninja_cat/ninja0.png" data-alt-src="img/ninja_cat/cat0.png"><br>
+                    <img style="margin: .5px;"src="img/ninja_cat/ninja1.png" data-alt-src="img/ninja_cat/cat1.png"><br>
+                    <img style="margin: .5px;"src="img/ninja_cat/ninja2.png" data-alt-src="img/ninja_cat/cat2.png"><br>
+                    <img style="margin: .5px;"src="img/ninja_cat/ninja3.png" data-alt-src="img/ninja_cat/cat3.png"><br>
+                    <img style="margin: .5px;"src="img/ninja_cat/ninja4.png" data-alt-src="img/ninja_cat/cat4.png"><br>
+                </div>
+            </div>
+
+       </div>
+        
+
+          <script>
+            $(document).ready(function() {
+            $('form').submit(function() {
+            
+            var city = $('.city').val()
+            var state = $('.state').val()
+            var country = $('.country').val()
+            var url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&&appid=ef32073a46171db5493eb164f54b30d9`
+            $.get(url, function(data) {
+                console.log(data);
+    
+                $('.location').html("<h5>"+data.name+"</h5>")
+                $('.temperature').html("<h5>"+ Math.floor((((data.main.temp - 273) * (9/5)) + 32)) + "° F" + "</h5>")
+            }, 'json');
+            // don't forget to return false so the page doesn't refresh
+            return false;
+        });
+    });
+
+    $(document).ready(function(){
+        $('img').click(function(){
+            $(this).attr('temp', $(this).attr('src'));
+            $(this).attr('src', $(this).attr('data-alt-src'));
+            $(this).attr('data-alt-src', $(this).attr('temp'));
+
+        })
+    })
+    
+        </script>
+
+    </div>
+
+    
+</body>
+</html>
