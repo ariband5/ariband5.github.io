@@ -32,7 +32,30 @@
               <p class="lead">There is beauty in simplicity </p>
             </div>
           </div>
-          
+
+          <div class="jumbotron"> 
+            <h1 class="display-4">OpenWeather API</h1>
+            <p class="lead">This is a simple weather application.</p>
+            <form>
+                <input type="text" class="city" placeholder="City">
+
+                <input type="text" class="state" placeholder="State">
+
+                <input type="text" class="country" placeholder="Country">  
+
+                <input type="submit" value="submit" button type="button" class="btn btn-success">
+
+            </form>
+            <br>
+            <div class="location"></div>
+            <div class="temperature"></div>
+            <hr class="my-4">
+            <p>It uses the OpenWeather API to get the temperature of any city.</p>
+            <p class="lead">
+              
+            </p>
+        </div>
+        
           <div class="card mb-3">
             <img src="https://i.imgur.com/a5JIgrx.png" class="card-img-top" alt="...">
             <div class="card-body">
@@ -141,8 +164,8 @@
             </div>
           </div>
 
-          <!-- <div class="container"> -->
-          <div>
+          
+          <!-- <div>
             <div class="jumbotron"> 
                <h1 class="display-4">OpenWeather API</h1>
                <p class="lead">This is a simple weather application.</p>
@@ -177,10 +200,10 @@
                 </div>
             </div>
 
-       </div>
+          </div> -->
         
 
-          <!-- <script>
+      <script>
             $(document).ready(function() {
             $('form').submit(function() {
             
@@ -196,50 +219,23 @@
             }, 'json');
             // don't forget to return false so the page doesn't refresh
             return false;
-        });
-    });
+            });
+          });
 
-    $(document).ready(function(){
-        $('img').click(function(){
-            $(this).attr('temp', $(this).attr('src'));
-            $(this).attr('src', $(this).attr('data-alt-src'));
-            $(this).attr('data-alt-src', $(this).attr('temp'));
+          $(document).ready(function(){
+              $('img').click(function(){
+                  $(this).attr('temp', $(this).attr('src'));
+                  $(this).attr('src', $(this).attr('data-alt-src'));
+                  $(this).attr('data-alt-src', $(this).attr('temp'));
 
-        })
-    })
+              })
+          })
     
-        </script> -->
+        </script>
 
-    </div>
+    </div> 
 
-    <script>
-      $(document).ready(function() {
-      $('form').submit(function() {
-      
-      var city = $('.city').val()
-      var state = $('.state').val()
-      var country = $('.country').val()
-      var url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&&appid=ef32073a46171db5493eb164f54b30d9`
-      $.get(url, function(data) {
-          console.log(data);
-
-          $('.location').html("<h5>"+data.name+"</h5>")
-          $('.temperature').html("<h5>"+ Math.floor((((data.main.temp - 273) * (9/5)) + 32)) + "° F" + "</h5>")
-      }, 'json');
-      // don't forget to return false so the page doesn't refresh
-      return false;
-  });
-});
-
-$(document).ready(function(){
-  $('img').click(function(){
-      $(this).attr('temp', $(this).attr('src'));
-      $(this).attr('src', $(this).attr('data-alt-src'));
-      $(this).attr('data-alt-src', $(this).attr('temp'));
-
-  })
-})
-
-  </script>
+    
 </body>
+
 </html>
