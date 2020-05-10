@@ -140,8 +140,9 @@
               <p class="card-text"><small class="text-muted"></small></p>
             </div>
           </div>
-          
-          <div class="container">
+
+          <!-- <div class="container"> -->
+          <div>
             <div class="jumbotron"> 
                <h1 class="display-4">OpenWeather API</h1>
                <p class="lead">This is a simple weather application.</p>
@@ -179,7 +180,7 @@
        </div>
         
 
-          <script>
+          <!-- <script>
             $(document).ready(function() {
             $('form').submit(function() {
             
@@ -207,10 +208,38 @@
         })
     })
     
-        </script>
+        </script> -->
 
     </div>
 
-    
+    <script>
+      $(document).ready(function() {
+      $('form').submit(function() {
+      
+      var city = $('.city').val()
+      var state = $('.state').val()
+      var country = $('.country').val()
+      var url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&&appid=ef32073a46171db5493eb164f54b30d9`
+      $.get(url, function(data) {
+          console.log(data);
+
+          $('.location').html("<h5>"+data.name+"</h5>")
+          $('.temperature').html("<h5>"+ Math.floor((((data.main.temp - 273) * (9/5)) + 32)) + "° F" + "</h5>")
+      }, 'json');
+      // don't forget to return false so the page doesn't refresh
+      return false;
+  });
+});
+
+$(document).ready(function(){
+  $('img').click(function(){
+      $(this).attr('temp', $(this).attr('src'));
+      $(this).attr('src', $(this).attr('data-alt-src'));
+      $(this).attr('data-alt-src', $(this).attr('temp'));
+
+  })
+})
+
+  </script>
 </body>
 </html>
