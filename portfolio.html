@@ -210,7 +210,7 @@
             var city = $('.city').val()
             var state = $('.state').val()
             var country = $('.country').val()
-            var url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&&appid=ef32073a46171db5493eb164f54b30d9`
+            var url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&&appid=ef32073a46171db5493eb164f54b30d9`
             $.get(url, function(data) {
                 console.log(data);
     
