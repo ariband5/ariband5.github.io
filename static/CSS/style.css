@@ -11,3 +11,12 @@
 p {
     padding: 5px;
 }
+.cat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cat_ninja {
+    margin: auto;
+    background-color: aqua;
+}
