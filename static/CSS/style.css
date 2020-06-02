@@ -1,21 +1,24 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Manrope', sans-serif;
 }
 
 .jumbotron {
     background-color: #F6F6EE;
 }
+
 .nav {
     background-color: #FF6601;
 }
 
 ul.nav {
-    height: 40px;
+    height: 35px;
 }
 .nav-link {
     color: black;
     text-size-adjust: auto;
+    font-size: smaller;
 }
 
 ul.nav a:hover {
@@ -28,6 +31,7 @@ ul.nav a:hover {
     margin: 5px;
     background-color: #F6F6EE;
 }
+
 p {
     padding: 5px;
 }
