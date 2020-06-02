@@ -17,6 +17,11 @@ ul.nav {
     color: black;
     text-size-adjust: auto;
 }
+
+ul.nav a:hover {
+    color: white !important;
+}
+
 .card {
     display: inline-block;
     vertical-align: top;
