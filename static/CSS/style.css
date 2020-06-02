@@ -6,11 +6,14 @@
 
 .jumbotron {
     background-color: #F6F6EE;
-    
+    border-radius: .25rem;
+
 }
 
 .nav {
     background-color: #FF6601;
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
 }
 
 ul.nav {
