@@ -1,7 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', sans-serif;;
 }
 
 .jumbotron {
@@ -11,7 +11,8 @@
 }
 
 .nav {
-    background-color: #FF6601;
+    /* background-color: #FF6601; */
+    background-color: #023e8a;
     border-top-right-radius: .25rem;
     border-top-left-radius: .25rem;
 }
@@ -20,13 +21,13 @@ ul.nav {
     height: 35px;
 }
 .nav-link {
-    color: black;
-    text-size-adjust: auto;
+    color: white;
+    font-family: 'Artifakt',sans-serif;
     font-size: smaller;
 }
 
 ul.nav a:hover {
-    color: white !important;
+    color:#caf0f8 !important;
 }
 
 .card {
