@@ -1,17 +1,17 @@
+@import "compass/css3";
+
 *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Manrope', sans-serif;;
+    font-family: 'Manrope', sans-serif;
 }
 
 .jumbotron {
     background-color: #F6F6EE;
     border-radius: .25rem;
-
 }
 
 .nav {
-    /* background-color: #FF6601; */
     background-color: #023e8a;
     border-top-right-radius: .25rem;
     border-top-left-radius: .25rem;
@@ -48,3 +48,31 @@ p {
 .cat_ninja {
     margin: auto;
 }
+
+footer {
+    width: 100%;
+    display: inline-block;
+    /* margin: 1em 0; */
+    height: 35px;
+    background-color: #023e8a;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+footer .copyright p {
+    text-align: center;
+    color: white;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+}  
+footer .copyright a {
+    display: inline-block;
+    text-align: center;
+    color: white;
+
+}
+
+
+
+
+
