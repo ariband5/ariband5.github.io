@@ -33,7 +33,7 @@ ul.nav a:hover {
 .card {
     display: inline-block;
     vertical-align: top;
-    margin: 5px;
+    /* margin: 5px; */
     background-color: #F6F6EE;
 }
 
